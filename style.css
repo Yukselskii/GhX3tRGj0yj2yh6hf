@@ -68,13 +68,13 @@ body, html {
 
 /* Larger Text Styles */
 h1 {
-    font-size: 3.5em; /* Increased for visibility */
+    font-size: 4em; /* Increased for visibility */
     padding: 10px;
     margin: 0;
 }
 
 p {
-    font-size: 1.5em; /* Increased for visibility */
+    font-size: 1.8em; /* Increased for visibility */
     margin-top: 15px;
     line-height: 1.4;
 }
@@ -101,7 +101,7 @@ p {
 .sticker-3 {
     width: 300px;
     left: 4%; /* Adjusted position for the bottom left corner */
-    bottom: 5%;
+    bottom: -3%;
 }
 
 .sticker-4 {
@@ -127,6 +127,13 @@ p {
 
 /* Responsive design for different screen sizes */
 @media (max-width: 768px), (max-height: 700px) {
+    h1 {
+        font-size: 3em; /* Still larger for tablet sizes */
+    }
+    p {
+        font-size: 1.4em;
+    }
+
     .card {
         padding: 20px;
     }
@@ -163,10 +170,10 @@ p {
 
 @media (max-width: 480px), (max-height: 500px) {
     h1 {
-        font-size: 2em;
+        font-size: 2.5em;
     }
     p {
-        font-size: 1em;
+        font-size: 1.2em;
     }
     .sticker {
         width: 60px; /* Even smaller stickers on mobile */
