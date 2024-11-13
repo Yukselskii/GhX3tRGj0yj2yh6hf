@@ -1,0 +1,198 @@
+/* Full-screen container */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    font-family: "Marck Script", serif;
+  font-weight: 400;
+  font-style: normal;
+    background: linear-gradient(120deg, #b19cd9, #9f7fcb, #6a5acd, #4b0082);
+    background-size: 400% 400%;
+    animation: gradientBG 7s infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Confetti wrapper */
+.confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0; /* Behind everything */
+    pointer-events: none; /* Makes sure confetti doesn't interfere with clicks */
+}
+
+/* Centering container */
+.center-container {
+    position: relative;
+    z-index: 1; /* Above confetti */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Main card container */
+.card {
+    text-align: center;
+    color: #fff;
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+    animation: dropIn 1s ease-out forwards;
+    opacity: 0;
+    transform: translateY(-100px);
+    z-index: 1;
+}
+
+@keyframes dropIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Larger Text Styles */
+h1 {
+    font-size: 3.5em; /* Increased for visibility */
+    padding: 10px;
+    margin: 0;
+}
+
+p {
+    font-size: 1.5em; /* Increased for visibility */
+    margin-top: 15px;
+    line-height: 1.4;
+}
+
+/* Sticker images positioned around the card */
+.sticker {
+    position: absolute;
+    object-fit: contain;
+    z-index: 0; /* Behind the card but above confetti */
+}
+
+.sticker-1 {
+    width: 450px;
+    left: 2%; /* Adjusted to position closer to the top left */
+    top: 5%;
+}
+
+.sticker-2 {
+    width: 400px;
+    right: 4%; /* Adjusted for better alignment on the right side */
+    top: 5%;
+}
+
+.sticker-3 {
+    width: 300px;
+    left: 4%; /* Adjusted position for the bottom left corner */
+    bottom: 5%;
+}
+
+.sticker-4 {
+    width: 300px;
+    right: 5%; /* Adjusted position for the bottom right corner */
+    bottom: 5%;
+}
+
+/* Individual confetti pieces */
+.confetti-piece {
+    position: absolute;
+    width: 6px;
+    height: 12px;
+    background-color: #fff;
+    opacity: 0.8;
+    animation: confettiFall linear infinite;
+}
+
+@keyframes confettiFall {
+    from { transform: translateY(-150%); }
+    to { transform: translateY(100vh); }
+}
+
+/* Responsive design for different screen sizes */
+@media (max-width: 768px), (max-height: 700px) {
+    .card {
+        padding: 20px;
+    }
+
+    /* Sticker images adjustment */
+    .sticker {
+        width: 80px; /* Scale down stickers */
+    }
+
+    .sticker-1 {
+        width: 220px;
+        left: 2%;
+        top: 5%; /* Adjust for smaller screen */
+    }
+
+    .sticker-2 {
+        width: 170px;
+        right: 4%;
+        top: 4%; /* Adjust for smaller screen */
+    }
+
+    .sticker-3 {
+        width: 150px;
+        left: 4%;
+        bottom: 1%; /* Adjust for smaller screen */
+    }
+
+    .sticker-4 {
+        width: 150px;
+        right: 5%;
+        bottom: 5%; /* Adjust for smaller screen */
+    }
+}
+
+@media (max-width: 480px), (max-height: 500px) {
+    h1 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 1em;
+    }
+    .sticker {
+        width: 60px; /* Even smaller stickers on mobile */
+    }
+
+    .sticker-1 {
+        width: 200px;
+        left: 4%;
+        top: 6%; /* Adjust for mobile screen */
+    }
+
+    .sticker-2 {
+        width: 180px;
+        right: 4%;
+        top: 3%; /* Adjust for mobile screen */
+    }
+
+    .sticker-3 {
+        width: 125px;
+        left: 5%;
+        bottom: 1%; /* Adjust for mobile screen */
+    }
+
+    .sticker-4 {
+        width: 150px;
+        right: 5%;
+        bottom: 5%; /* Adjust for mobile screen */
+    }
+}
