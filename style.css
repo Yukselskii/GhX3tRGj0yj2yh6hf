@@ -163,7 +163,7 @@ p {
     }
 }
 
-@media (max-width: 480px), (max-height: 500px) {
+@media (max-width: 600px) {
     h1 {
         font-size: 8vw;
     }
