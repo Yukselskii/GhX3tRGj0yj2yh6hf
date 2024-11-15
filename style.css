@@ -42,17 +42,17 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
 }
 
 /* Main card container */
 .card {
     text-align: center;
     color: #fff;
-    padding: 4vw;
-    width: 80vw;
-    max-width: 60vw;
+    padding: 2rem;
+    width: 90%;
+    max-width: 600px;
     animation: dropIn 1s ease-out forwards;
     opacity: 0;
     transform: translateY(-5vh);
@@ -68,14 +68,14 @@ body, html {
 
 /* Larger Text Styles */
 h1 {
-    font-size: 4vw;
-    padding: 1vw;
+    font-size: 2.5rem; /* Fixed rem unit for more consistency */
+    padding: 0.5rem;
     margin: 0;
 }
 
 p {
-    font-size: 2vw;
-    margin-top: 1.5vw;
+    font-size: 1.2rem;
+    margin-top: 1rem;
     line-height: 1.4;
 }
 
@@ -87,34 +87,34 @@ p {
 }
 
 .sticker-1 {
-    width: 25vw;
-    left: 2vw;
+    max-width: 20%;
+    left: 2rem;
     top: 5vh;
 }
 
 .sticker-2 {
-    width: 22vw;
-    right: 4vw;
+    max-width: 20%;
+    right: 2rem;
     top: 5vh;
 }
 
 .sticker-3 {
-    width: 15vw;
-    left: 4vw;
-    bottom: -3vh;
+    max-width: 15%;
+    left: 1.5rem;
+    bottom: 3vh;
 }
 
 .sticker-4 {
-    width: 15vw;
-    right: 5vw;
-    bottom: 5vh;
+    max-width: 15%;
+    right: 1.5rem;
+    bottom: 3vh;
 }
 
 /* Individual confetti pieces */
 .confetti-piece {
     position: absolute;
-    width: 0.3vw;
-    height: 0.6vw;
+    width: 0.3rem;
+    height: 0.6rem;
     background-color: #fff;
     opacity: 0.8;
     animation: confettiFall linear infinite;
@@ -126,82 +126,44 @@ p {
 }
 
 /* Responsive design for different screen sizes */
-@media (max-width: 768px), (max-height: 700px) {
+@media (max-width: 768px) {
     h1 {
-        font-size: 5vw; /* Adjust heading size */
+        font-size: 2rem; /* Larger font size for smaller screens */
     }
     p {
-        font-size: 3vw; /* Adjust paragraph font size */
-        max-width: 90%; /* Limit width to avoid overflow */
+        font-size: 1rem;
     }
 
     .card {
-        padding: 4vw; /* Adjust padding for better spacing on smaller screens */
+        padding: 1.5rem;
     }
 
-    .sticker-1, .sticker-2, .sticker-3, .sticker-4 {
-        position: absolute; /* Keep stickers in specific positions */
+    .sticker-1, .sticker-2 {
+        max-width: 25%;
     }
 
-    .sticker-1 {
-        width: 25vw;
-        left: 10vw;
-        top: 3vh;
-    }
-
-    .sticker-2 {
-        width: 22vw;
-        right: 10vw;
-        top: 3vh;
-    }
-
-    .sticker-3 {
-        width: 20vw;
-        left: 10vw;
-        bottom: 10vh;
-    }
-
-    .sticker-4 {
-        width: 20vw;
-        right: 10vw;
-        bottom: 10vh;
+    .sticker-3, .sticker-4 {
+        max-width: 20%;
     }
 }
 
-@media (max-width: 480px), (max-height: 500px) {
+@media (max-width: 480px) {
     h1 {
-        font-size: 7vw; /* Larger font for smaller screens */
+        font-size: 1.8rem;
     }
     p {
-        font-size: 4vw; /* Adjust paragraph font size */
-        max-width: 90%; /* Limit width to avoid overflow */
+        font-size: 0.9rem;
     }
 
     .card {
-        padding: 5vw; /* Adjust padding for readability */
+        padding: 1rem;
     }
 
-    .sticker-1 {
-        width: 30vw;
-        left: 8vw;
-        top: 2vh;
+    .sticker-1, .sticker-2 {
+        max-width: 30%;
     }
 
-    .sticker-2 {
-        width: 28vw;
-        right: 8vw;
-        top: 2vh;
-    }
-
-    .sticker-3 {
-        width: 25vw;
-        left: 10vw;
-        bottom: 8vh;
-    }
-
-    .sticker-4 {
-        width: 25vw;
-        right: 10vw;
-        bottom: 8vh;
+    .sticker-3, .sticker-4 {
+        max-width: 25%;
     }
 }
